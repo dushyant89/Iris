@@ -23,7 +23,7 @@ public class Classify
 		double e=2.71828182846;
 		try 
 		{
-			fis = new FileInputStream("C:/Dushyant/Artificial Intelligence/Iris/iris_data");
+			fis = new FileInputStream("D:/Dushyant/Iris/iris_data");
 			reader = new BufferedReader(new InputStreamReader(fis));
 			String line = reader.readLine();
 			int rows=0;
@@ -37,7 +37,7 @@ public class Classify
 			fis.close();
 			reader.close();
 
-			fis = new FileInputStream("C:/Dushyant/Artificial Intelligence/Iris/iris_data");
+			fis = new FileInputStream("D:/Dushyant/Iris/iris_data");
 			reader = new BufferedReader(new InputStreamReader(fis));
 			line = reader.readLine();
 			rows=0;
@@ -103,6 +103,7 @@ public class Classify
 			for(int i=0;i<total_links;i++)
 			{
 				links[i]=Math.random();
+				links[i]=0.5-links[i];            //this tweak over here plays a great role in the accuracy
 			}
 			Layer []layers=new Layer[hidden_layers+1];
 			//assigning the link weights to the input layer
@@ -320,7 +321,7 @@ public class Classify
 
 			System.out.println("Now that the network has converged , lets make efforts to generalize it");
 			
-			fis = new FileInputStream("C:/Dushyant/Artificial Intelligence/Iris/iris_data_test");
+			fis = new FileInputStream("D:/Dushyant/Iris/iris_data_test");
 			reader = new BufferedReader(new InputStreamReader(fis));
 			line = reader.readLine();
 			rows=0;
@@ -336,7 +337,7 @@ public class Classify
 			
 			String [][]table_test_strings=new String [rows][5];
 			
-			fis = new FileInputStream("C:/Dushyant/Artificial Intelligence/Iris/iris_data_test");
+			fis = new FileInputStream("D:/Dushyant/Iris/iris_data_test");
 			reader = new BufferedReader(new InputStreamReader(fis));
 			line = reader.readLine();
 			rows=0;
